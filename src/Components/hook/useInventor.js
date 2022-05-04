@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useInventor = () => {
    const [items,setitems]=useState([]);
    useEffect(()=>{
-       fetch('items.json')
+       fetch('http://localhost:5000/inventors')
        .then(res=>res.json())
        .then(data=>setitems(data))
    },[]);

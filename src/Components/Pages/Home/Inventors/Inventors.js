@@ -9,7 +9,7 @@ const Inventors = () => {
             <h1>My Items</h1>
             <div className="row">
                 {
-                    items.map(item=><Inventor item={item}></Inventor>)
+                    items.map(item=><Inventor key={item._id} item={item}></Inventor>)
                 }
             </div>
             
