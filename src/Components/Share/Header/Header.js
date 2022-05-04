@@ -11,7 +11,7 @@ const header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Features</Nav.Link>
+            <Nav.Link as={Link} to="/inventors">inventors</Nav.Link>
             <Nav.Link as={Link} to="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
