@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ipad",
+    "price": 25000,
+    "quantity": 10,
+    "description": "The iPad is a touchscreen tablet PC made by Apple . The original iPad debuted in 2010. Apple has three iPad product lines: iPad, iPad mini and iPad Pro. All models are available in silver, gray and gold. They run Apple's iOS mobile operating system and have Wi-Fi connectivity with optional 4G capabilities.",
+    "img": "https://i.ibb.co/JH8tydf/ipad.jpg",
+    "supplierName": "Ripon"
+  },
+  {
+    "name": "iphone-7",
+    "price": 45000,
+    "quantity": 10,
+    "description": "The iPhone 7 features a 28mm 12-megapixel camera with optical image stabilization, a wider f/1.8 aperture 6-element lens, wide color capture, and a revamped Apple image signal processor, all of which result in brighter, sharper, more detailed photos, even in low-light conditions.",
+    "img": "https://i.ibb.co/Cbck5dB/iphone-7.jpg",
+    "supplierName": "shuvo"
+  },
+  {
+    "name": "iphone-11",
+    "price": 55000,
+    "quantity": 10,
+    "description": "the iPhone 11 features a precision-machined 7000 series aluminum frame that wraps around an all-glass enclosure. With its 6.1-inch display, the iPhone 11 is between the 5.4-inch 'mini' iPhone models like the iPhone 13 mini and Apple's larger models like the 6.7-inch iPhone 13 Pro Max in size",
+    "img": "https://i.ibb.co/bQX2prT/iphone-11.jpg",
+    "supplierName": "raj"
+  },
+  {
+    "name": "iphone-12",
+    "price": 65000,
+    "quantity": 10,
+    "description": "The newly designed iPhone 12 models feature expansive edge-to-edge Super Retina XDR displays for a brighter, more immersive viewing experience, and a new Ceramic Shield front cover, providing the biggest jump in durability ever on iPhone.",
+    "img": "https://i.ibb.co/rHVKsw4/iphone-12.jpg",
+    "supplierName": "rimon"
+  },
+  {
+    "name": "iphone-12 pro",
+    "price": 70000,
+    "quantity": 10,
+    "description": "The A14 chip in the iPhone 12 Pro models brings new photographic features to the front-facing TrueDepth camera. Night mode works with the front-facing camera for the first time, enabling nighttime selfies. Deep Fusion, Smart HDR 3, and Dolby Vision HDR video recording are also supported.",
+    "img": "https://i.ibb.co/0Qjmxgp/iphone12-pro.jpg",
+    "supplierName": "rajib"
+  },
+  {
+    "name": "ipod",
+    "price": 10000,
+    "quantity": 10,
+    "description": "The iPod is a pocket-sized portable music-playing device produced by Apple and sold across the world. It's the best-known family of MP3 players and comes in a variety of models.",
+    "img": "https://i.ibb.co/mGBhxF3/ipod.jpg",
+    "supplierName": "Ripon"
+  },
+  {
+    "name": "macbook",
+    "price": 100000,
+    "quantity": 10,
+    "description": "The MacBook is Apple's third laptop computer family, introduced in 2006. Prior laptops were the PowerBook and iBook. In 2015, new MacBooks featured Apple's Retina Display and higher resolutions, as well as the Force Touch trackpad that senses different pressure levels.",
+    "img": "https://i.ibb.co/6P2Sjpw/laptop.jpg",
+    "supplierName": "saddam"
+  },
+  {
+    "name": "Apple-watch",
+    "price": 20000,
+    "quantity": 10,
+    "description": "Apple Watch is a wearable smartwatch that allows users to accomplish a variety of tasks, including making phone calls, sending text messages and reading email. Apple released the Apple Watch on April 24, 2015.",
+    "img": "https://i.ibb.co/4pcwJqQ/apple-watch.jpg",
+    "supplierName": "hossain"
+  },
+  {
+    "name": "Monitor",
+    "price": 75000,
+    "quantity": 10,
+    "description": "Apple monitors use three connection types: VGA, DisplayPort and Thunderbolt. The newest monitors use Thunderbolt while the oldest use VGA. VGA and DisplayPort monitors can use adapters to work with PCs that use alternative connection types..",
+    "img": "https://i.ibb.co/jW9tF3M/monitor.jpg",
+    "supplierName": "Ripon"
+  }
+]
