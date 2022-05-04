@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Pages/Home/Home/Home";
+import InventorDetails from "./Components/Pages/Home/InventorDetails/InventorDetails";
 import Inventors from "./Components/Pages/Home/Inventors/Inventors";
 import Login from "./Components/Pages/Login/Login/Login";
 import Footer from "./Components/Share/Footer/Footer";
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/inventors" element={<Inventors />} />
-        <Route path="/inventors/:_id" element={<Inventors />} />
+        <Route path="/inventors/:id" element={<InventorDetails />} />
         <Route path="*" element={<NotFound/>}/>
       </Routes>
       <Footer></Footer>

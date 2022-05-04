@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import './Inventor';
 
 const Inventor = ({ item }) => {
-  const { name, img, price, supplierName, description, quantity } = item;
+  const navigate=useNavigate()
+  const {_id, name, img, price, supplierName, description, quantity } = item;
+ const detailsHandle=(id)=>{
+  navigate(`/inventors/${id}`)
+ }
   return (
     <div className="col-md-4 py-5">
       <Card>
@@ -18,7 +23,7 @@ const Inventor = ({ item }) => {
           <Card.Title>Quantity:{quantity}</Card.Title>
           <Card.Title >Supplier Name: {supplierName}</Card.Title>
 
-          <Button variant="primary">See More</Button>
+          <Button onClick={()=>detailsHandle(_id)} variant="primary">See More</Button>
         </Card.Body>
       </Card>
     </div>
