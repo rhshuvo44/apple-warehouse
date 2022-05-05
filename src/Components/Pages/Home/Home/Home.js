@@ -10,7 +10,7 @@ const Home = () => {
       <Banner/>
     
       <div className="container py-5">
-        <h1>My items</h1>
+        <h1 className="text-center">My items</h1>
         <div className="row">
           {items.slice(0, 6).map((item) => (
             <Inventor key={item._id} item={item} />

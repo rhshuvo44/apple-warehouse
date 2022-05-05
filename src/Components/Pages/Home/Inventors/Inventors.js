@@ -5,8 +5,8 @@ import Inventor from '../Inventor/Inventor';
 const Inventors = () => {
     const [items]=useInventor([])
     return (
-        <div className='container'>
-            <h1>My Items</h1>
+        <div className='container py-5'>
+            <h1 className='text-center'>My Items</h1>
             <div className="row">
                 {
                     items.map(item=><Inventor key={item._id} item={item}></Inventor>)
