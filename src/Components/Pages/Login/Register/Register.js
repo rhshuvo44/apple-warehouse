@@ -22,7 +22,7 @@ const Register = () => {
   if(user || user1){
     navigate(from, { replace: true });
   }
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
       const name = data.name;
       const email = data.email;
       const password = data.password;
