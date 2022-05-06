@@ -1,19 +1,20 @@
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../../firebase.init";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-const navigate=useNavigate();
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+const navigate =useNavigate();
 const location = useLocation();
 const from = location.state?.from?.pathname || "/";
 
     const emailRef=useRef()
     const passwordRef=useRef();
 
-    if(user){
+    if(user || user1){
       navigate(from, { replace: true });
     }
   const login = (event) => {
@@ -22,6 +23,9 @@ const from = location.state?.from?.pathname || "/";
     const password=passwordRef.current.value;
     signInWithEmailAndPassword(email, password)
   };
+  const hangleGoogle=()=>{
+    signInWithGoogle()
+  }
   return (
     <div className="container py-5 w-50">
       <div className=" shadow p-3 mb-5 bg-white rounded">
@@ -55,7 +59,7 @@ const from = location.state?.from?.pathname || "/";
           </div>
           <br />
           <button type="submit" className="btn btn-primary">
-            login
+            Login
           </button>
         </form>
 
@@ -65,6 +69,7 @@ const from = location.state?.from?.pathname || "/";
             please register
           </Link>{" "}
         </p>
+        <button className="btn btn-primary" onClick={hangleGoogle}>LogIn Google</button>
       </div>
     </div>
   );
