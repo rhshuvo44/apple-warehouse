@@ -15,7 +15,7 @@ const InventorDetails = () => {
     navigate('/itemUpdate')
   }
   const delivary=()=>{
-    toast('Delivary succecs')
+    toast('Delivary success')
   }
   return (
     <div className="container py-5">

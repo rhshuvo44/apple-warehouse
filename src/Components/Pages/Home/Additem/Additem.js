@@ -7,7 +7,18 @@ const Additem = () => {
   const [user, loading, error] = useAuthState(auth);
   console.log(user.auth);
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data)
+    fetch('http://localhost:5000/inventors', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
   return (
     <div className="container py-5 text-center w-50">
       <h1 className="mb-5">Add New Item</h1>
@@ -15,7 +26,7 @@ const Additem = () => {
         <input
           type="text"
           className="w-100 mb-2 p-2"
-          placeholder="Name"
+          placeholder="Item Name"
           {...register("name")}
         />
         <input
@@ -24,19 +35,19 @@ const Additem = () => {
           placeholder="Email"
           {...register("email")}
         />
-        <input
+        <textarea
           className="w-100 mb-2 p-2"
-          placeholder="description"
+          placeholder="Description"
           {...register("description")}
         />
         <input
           className="w-100 mb-2 p-2"
-          placeholder="price"
+          placeholder="Price"
           {...register("price")}
         />
         <input
           className="w-100 mb-2 p-2"
-          placeholder="supplierName"
+          placeholder="SupplierName"
           {...register("supplierName")}
         />
         <input

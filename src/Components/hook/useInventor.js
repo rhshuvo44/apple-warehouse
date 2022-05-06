@@ -7,8 +7,8 @@ const useInventor = () => {
        fetch('http://localhost:5000/inventors')
        .then(res=>res.json())
        .then(data=>setitems(data))
-   },[]);
-   return [items];
+   },[items]);
+   return [items,setitems];
 };
 
 export default useInventor;

@@ -19,7 +19,7 @@ function RequiredAuth({ children }) {
         </div>
       );
     }
-    if(user.providerData[0]?.providerId === 'password' && !user.emailVerified){
+    if(user?.providerData[0]?.providerId === 'password' && ! user.emailVerified){
       return(
     <div className="container py-5 text-center">
       <h1 className="text-danger m-5">Your Email Not Verify</h1>

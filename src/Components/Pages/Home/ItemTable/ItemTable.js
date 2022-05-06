@@ -1,11 +1,26 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import useInventor from '../../../hook/useInventor';
 
 const ItemTable = ({item}) => {
+  const [items,setitems]=useInventor()
   
     const {_id,name,price,quantity,supplierName}=item;
     const handleDelet=(id)=>{
-      toast('deleted ')
+      const deleteConfirm=window.confirm('Are you sure?')
+      if(deleteConfirm){
+        const url=`http://localhost:5000/inventors/${id}`
+        fetch(url, {
+          method: 'DELETE',
+        })
+        .then(res=>res.json())
+        
+        .then(data=>{
+          const result=items.filter(item => item._id != id);
+          setitems(result);
+          toast('Deleted Success')
+        })
+      }
     }
     return (
         <tr>
