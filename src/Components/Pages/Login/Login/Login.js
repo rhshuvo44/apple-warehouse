@@ -1,12 +1,16 @@
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail ] = useSendPasswordResetEmail(
+      auth
+    );
 const navigate =useNavigate();
 const location = useLocation();
 const from = location.state?.from?.pathname || "/";
@@ -14,6 +18,7 @@ const from = location.state?.from?.pathname || "/";
     const emailRef=useRef()
     const passwordRef=useRef();
 
+  
     if(user || user1){
       navigate(from, { replace: true });
     }
@@ -23,11 +28,20 @@ const from = location.state?.from?.pathname || "/";
     const password=passwordRef.current.value;
     signInWithEmailAndPassword(email, password)
   };
+  const restPassword= async()=>{
+    const email=emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("Please your email");
+    }
+  }
   const hangleGoogle=()=>{
     signInWithGoogle()
   }
   return (
-    <div className="container py-5 w-50">
+    <div className="container py-5 w-50 ">
       <div className=" shadow p-3 mb-5 bg-white rounded">
         <h1>Please LogIn</h1>
         <form onSubmit={login}>
@@ -62,13 +76,23 @@ const from = location.state?.from?.pathname || "/";
             Login
           </button>
         </form>
-
+        {
+          error && <p className="text-danger py-3">your email or password invalid </p>
+        }
+        <div className="d-flex justify-content-betwee align-items-center">
+        <p >
+          Forget Password?
+          <button className="btn btn-link" onClick={restPassword}>
+            Reset Password
+          </button>
+        </p>
         <p>
           New user ?{" "}
           <Link className="text-danger" to="/register">
             please register
           </Link>{" "}
         </p>
+        </div>
         <button className="btn btn-primary" onClick={hangleGoogle}>LogIn Google</button>
       </div>
     </div>
