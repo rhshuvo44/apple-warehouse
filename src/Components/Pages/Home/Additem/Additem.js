@@ -6,7 +6,7 @@ import auth from "../../../../firebase.init";
 
 const Additem = () => {
   const [user] = useAuthState(auth);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit ,reset } = useForm();
   const onSubmit = (data) => {
     fetch('http://localhost:5000/inventors', {
       method: 'POST',
@@ -19,6 +19,8 @@ const Additem = () => {
       .then((result) => {
         toast('Add Item success')
       });
+      reset();
+
   };
   return (
     <div className="container py-5 text-center w-50">
