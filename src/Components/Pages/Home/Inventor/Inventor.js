@@ -21,7 +21,7 @@ const Inventor = ({ item }) => {
           <Card.Title>Price:${price}</Card.Title>
 
           <Card.Title>Quantity:{quantity}</Card.Title>
-          <Card.Title >Supplier Name: {supplierName}</Card.Title>
+          <Card.Title >Supplier : {supplierName}</Card.Title>
 
           <Button onClick={()=>detailsHandle(_id)} variant="primary">See More</Button>
         </Card.Body>

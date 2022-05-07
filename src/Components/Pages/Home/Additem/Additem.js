@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 
 const Additem = () => {
-  const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     fetch('http://localhost:5000/inventors', {
@@ -49,6 +48,13 @@ const Additem = () => {
           {...register("price")}
         />
         <input
+        type="number"
+          className="w-100 mb-2 p-2"
+          placeholder="Quantity"
+          {...register("quantity")}
+        />
+        <input
+        type="text"
         value={user.displayName}
           className="w-100 mb-2 p-2"
           placeholder="SupplierName"
