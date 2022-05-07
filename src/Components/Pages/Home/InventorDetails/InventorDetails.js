@@ -13,21 +13,20 @@ const InventorDetails = () => {
       .then((data) => setItem(data));
   }, [item]);
   const itemUpdate = (id) => {
-    // const newQuantity = parseInt(stockRef.current.value);
-    // const quantity = newQuantity + item.quantity;
-    // const url = `http://localhost:5000/inventors/${id}`;
-    // fetch(url, {
-    //   method: "PUT",
-    //   body: JSON.stringify(quantity),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     toast("Stock Update");
-    //   });
+    const updateQuantity = parseInt(stockRef.current.value)+quantity;
+    item={quantity:updateQuantity}
+    const url = `http://localhost:5000/inventors/${id}`;
+    fetch(url, {
+      method: "PUT",
+      body: JSON.stringify(item),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast("Stock Update");
+      });
   };
   const delivary = () => {
 
@@ -43,7 +42,6 @@ const InventorDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast("Delivary Success");
       });
   };
