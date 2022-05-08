@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Iphone warehouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+live [Click](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

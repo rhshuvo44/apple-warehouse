@@ -18,6 +18,7 @@ const InventorManage = () => {
       <th>Price</th>
       <th>Quantity</th>
       <th>Supplier Name</th>
+      <th>Update</th>
       <th>Deleted</th>
     </tr>
   </thead>
