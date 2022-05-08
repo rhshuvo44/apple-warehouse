@@ -93,7 +93,6 @@ const from = location.state?.from?.pathname || "/";
         {
           error && <p className="text-danger py-3">your email or password invalid </p>
         }
-        <div className="d-flex justify-content-betwee align-items-center">
         <p >
           Forget Password?
           <button className="btn btn-link" onClick={restPassword}>
@@ -106,7 +105,6 @@ const from = location.state?.from?.pathname || "/";
             please register
           </Link>{" "}
         </p>
-        </div>
         <button className="btn btn-primary" onClick={hangleGoogle}>LogIn Google</button>
       </div>
     </div>
