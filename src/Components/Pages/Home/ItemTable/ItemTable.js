@@ -14,7 +14,7 @@ const ItemTable = ({item}) => {
     const handleDelete=(id)=>{
       const deleteConfirm=window.confirm('Are you sure?')
       if(deleteConfirm){
-        const url=`http://localhost:5000/inventors/${id}`
+        const url=`https://glacial-harbor-29138.herokuapp.com/inventors/${id}`
         fetch(url, {
           method: 'DELETE',
         })

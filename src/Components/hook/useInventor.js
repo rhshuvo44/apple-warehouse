@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useInventor = () => {
    const [items,setitems]=useState([]);
    useEffect(()=>{
-       fetch('http://localhost:5000/inventors')
+       fetch('https://glacial-harbor-29138.herokuapp.com/inventors')
        .then(res=>res.json())
        .then(data=>setitems(data))
    },[items]);

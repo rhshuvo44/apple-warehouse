@@ -8,7 +8,7 @@ const Additem = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit ,reset } = useForm();
   const onSubmit = (data) => {
-    fetch('http://localhost:5000/inventors', {
+    fetch('https://glacial-harbor-29138.herokuapp.com/inventors', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

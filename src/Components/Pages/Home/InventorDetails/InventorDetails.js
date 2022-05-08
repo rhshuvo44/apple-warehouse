@@ -7,16 +7,16 @@ const InventorDetails = () => {
   const stockRef = useRef();
   let [item, setItem] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/inventors/${id}`)
+    fetch(`https://glacial-harbor-29138.herokuapp.com/inventors/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [item]);
   const {quantity}=item;
 
   const itemUpdate = (id) => {
-    const updateQuantity = parseInt(stockRef.current.value)+quantity;
+    const updateQuantity = parseInt(stockRef.current.value)+parseInt(quantity);
     item={quantity:updateQuantity}
-    const url = `http://localhost:5000/inventors/${id}`;
+    const url = `https://glacial-harbor-29138.herokuapp.com/inventors/${id}`;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify(item),
@@ -28,12 +28,13 @@ const InventorDetails = () => {
       .then((data) => {
         toast("Stock Update");
       });
+      stockRef.current.value=''
   };
   const delivary = () => {
 
     const newQuantity = parseInt(quantity) -1;
     item={quantity:newQuantity}
-    const url = `http://localhost:5000/inventors/${id}`;
+    const url = `https://glacial-harbor-29138.herokuapp.com/inventors/${id}`;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify(item),
