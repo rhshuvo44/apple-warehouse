@@ -61,12 +61,13 @@ const InventorDetails = () => {
         </div>
         <div className="col-md-5">
           <div className="">
-            <h6>Name: {item.name}</h6>
-            <p>Id: {item._id}</p>
-            <p>{item.description}</p>
+            <h2>Name: {item.name}</h2>
+            <h5>Id: {item._id}</h5>
             <h5>Price:$ {item.price}</h5>
-            <p>Stock : {item.quantity}</p>
-            <h3>Supplier name : {item.supplierName}</h3>
+            <h5>Stock : {item.quantity}</h5>
+            <h5>Supplier : {item.supplierName}</h5>
+            
+            <p>{item.description}</p>
           </div>
           <button
             onClick={() => itemUpdate(item._id)}
