@@ -16,7 +16,7 @@ const UserItem = ({item}) => {
         .then(res=>res.json())
         
         .then(data=>{
-          const result=items.filter(item => item._id != id);
+          const result=items.filter(item => item._id !== id);
           setitems(result);
           toast('Deleted Success')
         })

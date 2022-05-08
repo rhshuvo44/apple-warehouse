@@ -7,18 +7,8 @@ import UserItem from '../UserItem/UserItem';
 
 const MyItem = () => {
     const [user]=useAuthState(auth);
-    const [items,setItems]=useInventor({});
+    const [items]=useInventor({});
     const email=user.email;
-    // const [items,setItems]=useState([])
-    // useEffect(()=>{
-    //     const myItems=async()=>{
-    //         const email=user.email;
-    //        await fetch(`http://localhost:5000/inventors?email=${email}`)
-    //         .then(res=>res.json())
-    //         .then(data=> setItems(data))
-    //     }
-    //     myItems()
-    // },[user])
     const myitems= items.filter(item=>item.email === email)
     return (
         <div className='container py-5 text-center'>

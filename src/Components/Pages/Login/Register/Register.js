@@ -1,20 +1,30 @@
 import React from "react";
+import { Spinner } from "react-bootstrap";
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../../firebase.init";
 
 const Register = () => {
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth);
-  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user1, loading1] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { register, handleSubmit, reset } = useForm();
+  if (loading || loading1) {
+    return (
+      <div className="py-5 text-center">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
   if (user || user1) {
     navigate(from, { replace: true });
   }

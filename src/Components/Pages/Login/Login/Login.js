@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useRef } from "react";
+import { Spinner } from "react-bootstrap";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,7 +9,7 @@ import auth from "../../../../firebase.init";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user1 ,loading1] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail ] = useSendPasswordResetEmail(
       auth
     );
@@ -18,16 +20,28 @@ const from = location.state?.from?.pathname || "/";
     const emailRef=useRef()
     const passwordRef=useRef();
 
-  
+    if (loading || loading1) {
+      return (
+        <div className="py-5 text-center">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      );
+    }
     if(user || user1){
       navigate(from, { replace: true });
     }
-  const login = (event) => {
+  const login =async (event) => {
     event.preventDefault();
     const email=emailRef.current.value;
     const password=passwordRef.current.value;
-    signInWithEmailAndPassword(email, password)
-  };
+    await signInWithEmailAndPassword(email, password)
+
+  const {data}= await axios.post('http://localhost:5000/login', {email});
+  
+  localStorage.setItem('token',data.token)
+  }
   const restPassword= async()=>{
     const email=emailRef.current.value;
     if (email) {

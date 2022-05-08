@@ -6,12 +6,13 @@ const InventorDetails = () => {
   const { id } = useParams();
   const stockRef = useRef();
   let [item, setItem] = useState({});
-  const {quantity}=item;
   useEffect(() => {
     fetch(`http://localhost:5000/inventors/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [item]);
+  const {quantity}=item;
+
   const itemUpdate = (id) => {
     const updateQuantity = parseInt(stockRef.current.value)+quantity;
     item={quantity:updateQuantity}
